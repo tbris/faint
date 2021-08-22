@@ -1,10 +1,13 @@
 <div class="post" id="<%= post.id %>">
   <div class="post-header">
-    <%= post.created_at.strftime('%D(%a)%T') %>
+    <span class="post-subject">
+      <%= post.subject.truncate 50, separator: /\s/ if post.subject %>
+    </span>
+    <%= post.created_at.strftime "%D(%a)%T" %>
     No.<%= link_to post.id, post, class: "post-id" %>
     <a href="#<%= post.id %>" class="post-anchor">#</a>
   </div>
-  <blockquote class="post-content">
+  <blockquote>
     <%= post.comment %>
   </blockquote>
 </div>

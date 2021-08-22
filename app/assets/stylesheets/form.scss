@@ -1,13 +1,30 @@
 #post-input {
   margin: 0 auto;
   border-spacing: 1px;
+  width: 468px;
+  tr {
+    td {
+      padding: 0;
+    }
+    td:first-child {
+      color: #000;
+      font-weight: bold;
+      border: 1px solid #000;
+      padding: 0 5px;
+    }
+  }
   textarea {
-    padding: 2px 4px 3px;
-    border: 1px solid #aaa;
-    outline: none;
-    font-family: arial,helvetica,sans-serif;
-    font-size: 10pt;
+    width: 292px;
     min-width: 230px;
+    max-width: 400px;
     min-height: 100px;
   }
+}
+input[type="text"], textarea {
+  margin: 0;
+  padding: 2px 4px 3px;
+  border: 1px solid #aaa;
+  outline: none;
+  font-family: arial,helvetica,sans-serif;
+  font-size: 10pt;
 }

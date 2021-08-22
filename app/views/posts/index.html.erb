@@ -1,5 +1,8 @@
 <%= render "form", post: Post.new %>
 
+<br>
+<br>
+
 <% @posts.order(created_at: :desc).each do |post| %>
   <%= render "post", post: post %>
   <hr>

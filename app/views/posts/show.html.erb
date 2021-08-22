@@ -6,5 +6,5 @@
 
 <%= render "post", post: @post, mainClass: "post", show: false %>
 <% @post.replies.each do |reply| %>
-  <%= render "post", post: reply, mainClass: "post reply", show: false %>
+  <%= render "reply", reply: reply %>
 <% end %>

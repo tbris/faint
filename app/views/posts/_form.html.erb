@@ -3,12 +3,18 @@
     <tbody>
       <tr>
         <td>
-          <%= form.text_area :content %>
+          Subject
         </td>
-      </tr>
+        <td>
+          <%= form.text_field :subject %>
+          <%= form.submit "Post" %>
+        </td>
       <tr>
         <td>
-          <%= form.submit "Post" %>
+          Comment
+        </td>
+        <td>
+          <%= form.text_area :comment %>
         </td>
       </tr>
   </table>

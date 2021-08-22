@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, pre, a, img, embed, audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+blockquote {
+  quotes: none;
+}
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+body {
+  line-height: 1;
+  font-family: arial,helvetica,sans-serif;
+  font-size: 10pt;
+  color: #000;
+}
+#root {
+  width: 600px;
+  margin: 0 auto;
+}
+hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #b7c5d9;
+}

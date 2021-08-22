@@ -2,4 +2,5 @@
 
 <% @posts.order(created_at: :desc).each do |post| %>
   <%= render "post", post: post %>
+  <hr>
 <% end %>

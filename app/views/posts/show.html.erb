@@ -1,7 +1,7 @@
 <%= render "form", post: Post.new %>
 
-<div id="nav">
-  [<%= link_to "Return", posts_path %>]
+<div class="nav">
+  [<%= link_to "Return", posts_path(anchor: @post.id) %>]
 </div>
 
 <%= render "post", post: @post %>

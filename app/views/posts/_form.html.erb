@@ -1,5 +1,15 @@
 <%= form_with(model: post) do |form| %>
-  <%= form.text_area :content %>
-  <br>
-  <%= form.submit "Post" %>
+  <table id="post-input">
+    <tbody>
+      <tr>
+        <td>
+          <%= form.text_area :content %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= form.submit "Post" %>
+        </td>
+      </tr>
+  </table>
 <% end %>

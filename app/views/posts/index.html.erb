@@ -1,5 +1,5 @@
+<%= render "form", post: Post.new %>
+
 <% @posts.order(created_at: :desc).each do |post| %>
-  <div class="post">
-    <%= post.content %>
-  </div>
+  <%= render "post", post: post %>
 <% end %>

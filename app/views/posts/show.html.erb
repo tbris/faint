@@ -1,3 +1,7 @@
-<div id="post expanded">
-  <%= @post.content %>
+<%= render "form", post: Post.new %>
+
+<div id="nav">
+  [<%= link_to "Return", posts_path %>]
 </div>
+
+<%= render "post", post: @post %>

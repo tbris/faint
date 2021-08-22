@@ -1,0 +1,9 @@
+<div class="post">
+  <div class="post-header">
+    <%= post.created_at.strftime('%D(%a)%T') %>
+    No.<%= link_to post.id, post %>
+  </div>
+  <div class="post-content">
+    <%= post.content %>
+  </div>
+</div>

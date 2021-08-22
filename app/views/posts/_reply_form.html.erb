@@ -3,19 +3,13 @@
     <tbody>
       <tr>
         <td>
-          Subject
-        </td>
-        <td>
-          <%= form.text_field :subject %>
-          <%= form.submit "Post" %>
-        </td>
-      </tr>
-      <tr>
-        <td>
           Comment
         </td>
         <td>
+          <%= form.hidden_field :post_id, value: post_id %>
           <%= form.text_area :comment %>
+          <br>
+          <%= form.submit "Reply" %>
         </td>
       </tr>
     </tbody>

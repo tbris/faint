@@ -4,6 +4,9 @@
 <br>
 
 <% @posts.order(created_at: :desc).each do |post| %>
-  <%= render "post", post: post %>
+  <%= render "post", post: post, mainClass: "post", show: true %>
+  <% post.replies.last(5).each do |reply| %>
+    <%= render "post", post: reply, mainClass: "post reply", show: false %>
+  <% end %>
   <hr>
 <% end %>

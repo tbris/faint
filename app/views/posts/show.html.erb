@@ -4,4 +4,7 @@
   [<%= link_to "Return", posts_path(anchor: @post.id) %>]
 </div>
 
-<%= render "post", post: @post %>
+<%= render "post", post: @post, mainClass: "post", show: false %>
+<% @post.replies.each do |reply| %>
+  <%= render "post", post: reply, mainClass: "post reply", show: false %>
+<% end %>

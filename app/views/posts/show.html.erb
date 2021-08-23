@@ -1,4 +1,4 @@
-<%= render "reply_form", instance: Reply.new, post_id: @post.id %>
+<%= render "reply_form", instance: Post.new, post_id: @post.id %>
 
 <div class="nav">
   [<%= link_to "Return", posts_path(anchor: @post.id) %>]

@@ -29,8 +29,8 @@ phrases = [
 ]
 
 10.times do
-  post = Post.create(subject: phrases.sample, comment: phrases.sample)
+  post = Post.create!(subject: phrases.sample, comment: phrases.sample)
   (rand * 20).round.times do
-    post.replies.create(comment: phrases.sample)
+    post.replies.create!(comment: phrases.sample)
   end
 end

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.where(is_reply: false)
   end
 
   def show
@@ -11,7 +11,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post
+      if @post.is_reply
+        redirect_to post_path(@post.original, anchor: @post.id)
+      else
+        redirect_to @post
+      end
     else
       # handle errors
     end
@@ -20,6 +24,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:subject, :comment)
+    params.require(:post).permit(:subject, :comment, :original_id)
   end
 end

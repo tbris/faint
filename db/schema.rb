@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_22_193114) do
+ActiveRecord::Schema.define(version: 2021_08_23_001925) do
 
   create_table "posts", force: :cascade do |t|
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "subject"
+    t.boolean "is_reply", default: false
+    t.integer "original_id"
+    t.index ["original_id"], name: "index_posts_on_original_id"
   end
 
+  add_foreign_key "posts", "posts", column: "original_id"
 end

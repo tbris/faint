@@ -1,10 +1,16 @@
-<div class="post" id="<%= post.id %>">
+<div id="<%= post.id %>" class="<%= mainClass %>">
   <div class="post-header">
-    <span class="post-subject">
-      <%= post.subject.truncate 50, separator: /\s/ if post.subject %>
-    </span>
+    <% if post.respond_to?(:subject) %>
+      <span class="post-subject">
+        <%= post.subject.truncate 50, separator: /\s/ if post.subject %>
+      </span>
+    <% end %>
     <%= post.created_at.strftime "%D(%a)%T" %>
-    No.<%= link_to post.id, post, class: "post-id" %>
+    <% if show %>
+      No.<%= link_to post.id, post, class: "post-id" %>
+    <% else %>
+      No.<%= post.id %>
+    <% end %>
     <a href="#<%= post.id %>" class="post-anchor">#</a>
   </div>
   <blockquote>

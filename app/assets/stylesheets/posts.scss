@@ -14,6 +14,7 @@ a {
 .post {
   padding: 2pt 0;
   line-height: 1.1;
+  margin: 4px 0;
 }
 .post-subject {
   font-weight: bold;
@@ -23,4 +24,22 @@ a {
 }
 .post-anchor {
   text-decoration: underline;
+}
+.reply {
+  background: #eee;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+  display: table;
+  &-marker {
+    cursor: default;
+    user-select: none;
+    color: #aaa;
+    float: left;
+    margin: 0 2px;
+  }
+}
+.expand-thread {
+  margin-bottom: 8px;
+  color: #444;
 }

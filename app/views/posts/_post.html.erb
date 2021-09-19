@@ -7,7 +7,7 @@
     <% end %>
     <%= post.created_at.strftime "%D(%a)%T" %>
     <% if show %>
-      No.<%= link_to post.id, post, class: "post-id" %>
+      No.<%= link_to post.id, thread_path(post), class: "post-id" %>
     <% else %>
       No.<%= post.id %>
     <% end %>

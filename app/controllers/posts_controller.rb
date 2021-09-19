@@ -12,9 +12,9 @@ class PostsController < ApplicationController
 
     if @post.save
       if @post.is_reply
-        redirect_to post_path(@post.original, anchor: @post.id)
+        redirect_to thread_path(@post.original, anchor: @post.id)
       else
-        redirect_to @post
+        redirect_to thread_path(@post)
       end
     else
       # handle errors

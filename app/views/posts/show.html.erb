@@ -1,7 +1,7 @@
 <%= render "reply_form", reply: Post.new, post_id: @post.id %>
 
 <div class="nav">
-  [<%= link_to "Return", posts_path(anchor: @post.id) %>]
+  [<%= link_to "Return", root_path(anchor: @post.id) %>]
 </div>
 
 <%= render "post", post: @post, main_class: "post", show: false %>

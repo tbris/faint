@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts, except: [:new, :edit, :update]
-  resources :replies, only: [:create]
+  get 'pages/show'
+
+  get 'thread/:id', to: 'posts#show', as: "thread"
+  post 'posts', to: 'posts#create'
   root 'posts#index'
 end

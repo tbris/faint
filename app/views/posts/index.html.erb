@@ -10,7 +10,7 @@
     <% if post.replies.size >= 5 %>
       <div class="expand-thread">
         <%= pluralize post.replies.size - 5, "reply" %> omitted.
-        <%= link_to "Click here", post %> to view
+        <%= link_to "Click here", thread_path(post) %> to view
       </div>
     <% end %>
     <% post.replies.last(5).each do |reply| %>

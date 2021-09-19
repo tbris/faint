@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/show'
+  get '/:id', to: 'pages#show'
 
-  get 'thread/:id', to: 'posts#show', as: "thread"
+  get 'thread/:id', to: 'posts#show', as: 'thread'
   post 'posts', to: 'posts#create'
   root 'posts#index'
 end

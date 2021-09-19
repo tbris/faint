@@ -1,4 +1,4 @@
-<%= render "form", post: Post.new %>
+<%= render "posts/form", post: Post.new %>
 
 <div class="nav">
   <input type="text" placeholder="Search OPs...">
@@ -6,7 +6,7 @@
 
 <% @posts.order(created_at: :desc).each do |post| %>
   <div class="thread">
-    <%= render "post", post: post, main_class: "post", show: true %>
+    <%= render "posts/post", post: post, main_class: "post", show: true %>
     <% if post.replies.size >= 5 %>
       <div class="expand-thread">
         <%= pluralize post.replies.size - 5, "reply" %> omitted.
@@ -14,7 +14,7 @@
       </div>
     <% end %>
     <% post.replies.last(5).each do |reply| %>
-      <%= render "reply", reply: reply %>
+      <%= render "posts/reply", reply: reply %>
     <% end %>
   </div>
   <hr>

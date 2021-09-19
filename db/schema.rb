@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2021_08_23_001925) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "subject"
     t.boolean "is_reply", default: false
-    t.integer "original_id"
-    t.index ["original_id"], name: "index_posts_on_original_id"
+    t.integer "opening_id"
+    t.index ["opening_id"], name: "index_posts_on_opening_id"
   end
 
-  add_foreign_key "posts", "posts", column: "original_id"
+  add_foreign_key "posts", "posts", column: "opening_id"
 end

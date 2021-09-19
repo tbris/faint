@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
     if @post.save
       if @post.is_reply
-        redirect_to thread_path(@post.original, anchor: @post.id)
+        redirect_to thread_path(@post.opening, anchor: @post.id)
       else
         redirect_to thread_path(@post)
       end
@@ -24,6 +24,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:subject, :comment, :original_id)
+    params.require(:post).permit(:subject, :comment, :opening_id)
   end
 end
